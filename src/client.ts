@@ -28,6 +28,19 @@ export interface ClientConfig {
   idleTimeout?: number;
   /** charset */
   charset?: string;
+  /** TLS configuration */
+  tls?: TLSConfig;
+}
+
+/**
+ * TLS Config
+ */
+export interface TLSConfig {
+  /** Whether to enable TLS */
+  enabled: boolean;
+  /** A list of root certificates (in PEM format) that will be used in addition to the
+    * default root certificates to verify the peer's certificate. */
+  caCertificates?: string[];
 }
 
 /** Transaction processor */
